@@ -37,7 +37,7 @@ for control in control_list:
     car_controls.throttle = control[0]
     car_controls.steering = control[1]
     client.setCarControls(car_controls)
-    time.sleep(3)   # let car drive a bit
+    time.sleep(10)   # let car drive a bit
 
 #restore to original state
 client.reset()
