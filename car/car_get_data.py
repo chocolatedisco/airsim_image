@@ -45,7 +45,7 @@ control_list = [[0.5,0],[0.5,1]]
 for parking in parking_list:
     print(parking_list)
     client.simSetVehiclePose(parking, True, vehicle_name = 'PhysXCar')
-    time.sleep(4)
+    time.sleep(300)
     # for control in control_list:
     #     get_data(parking, control)
 
