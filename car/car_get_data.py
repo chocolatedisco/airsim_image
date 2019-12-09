@@ -44,7 +44,7 @@ control_list = [[0.5,0],[0.5,1]]
 
 for parking in parking_list:
     print(parking_list)
-    client.moveToPosition(100, 100, 100, 5, max_wait_seconds = 60, drivetrain = DrivetrainType.MaxDegreeOfFreedom, yaw_mode = YawMode(), lookahead = -1, adaptive_lookahead = 1)
+    client.moveToPosition(100, 100, 100, 5, max_wait_seconds = 60, drivetrain = 0, yaw_mode = YawMode(), lookahead = -1, adaptive_lookahead = 1)
     # client.simSetVehiclePose(parking, True, vehicle_name = 'PhysXCar')
     time.sleep(300)
     # for control in control_list:
