@@ -38,7 +38,7 @@ for control in control_list:
     car_controls.throttle = control[0]
     car_controls.steering = control[1]
     client.setCarControls(car_controls)
-    for i in range(20):
+    for i in range(10):
         save_image(client,camera_list,i)
     # time.sleep(10)   # let car drive a bit
     client.reset()
