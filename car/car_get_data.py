@@ -28,16 +28,20 @@ def save_image(client, camera_list, iter):
         filename = 'c:/temp/{}/{}'.format(camera, str(iter))
         png_image = client.simGetImage(camera, airsim.ImageType.Scene)
         airsim.write_file(os.path.normpath(filename+".png"),png_image)
+    time.sleep(0.2)
 
 # parking_list = []
-camera_list = []
-control_list = [[0.5,0],[0.5,1]]
+camera_list = ["ff","fba","fr","fl","ft","fbo"]
+control_list = [[0.5,0]]
 
 for control in control_list:
     car_controls.throttle = control[0]
     car_controls.steering = control[1]
     client.setCarControls(car_controls)
-    time.sleep(10)   # let car drive a bit
+    for i in range(20):
+        save_image(client,camera_list,i)
+    # time.sleep(10)   # let car drive a bit
+    client.reset()
 
 #restore to original state
 client.reset()
