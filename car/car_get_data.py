@@ -29,26 +29,15 @@ def save_image(client, camera_list, iter):
         png_image = client.simGetImage(camera, airsim.ImageType.Scene)
         airsim.write_file(os.path.normpath(filename+".png"),png_image)
 
-parking_list = [
-    {
-    "X": 100,
-    "Y": 100,
-    "Z": 100,
-    "Pitch": 0,
-    "Roll": 0,
-    "Yaw": 180
-    }
-]
+# parking_list = []
 camera_list = []
 control_list = [[0.5,0],[0.5,1]]
 
-for parking in parking_list:
-    print(parking_list)
-    client.moveToPosition(100, 100, 100, 5, max_wait_seconds = 60, drivetrain = 0, yaw_mode = airsim.YawMode(), lookahead = -1, adaptive_lookahead = 1)
-    # client.simSetVehiclePose(parking, True, vehicle_name = 'PhysXCar')
-    time.sleep(300)
-    # for control in control_list:
-    #     get_data(parking, control)
+for control in control_list:
+    car_controls.throttle = control[0]
+    car_controls.steering = control[1]
+    client.setCarControls(car_controls)
+    time.sleep(3)   # let car drive a bit
 
 #restore to original state
 client.reset()
