@@ -31,12 +31,12 @@ def save_image(client, camera_list, iter):
 
 parking_list = [
     {
-    "X": 10,
-    "Y": 10,
-    "Z": 10,
+    "X": 100,
+    "Y": 100,
+    "Z": 100,
     "Pitch": 0,
     "Roll": 0,
-    "Yaw": 0
+    "Yaw": 180
     }
 ]
 camera_list = []
